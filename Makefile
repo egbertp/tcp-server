@@ -25,16 +25,16 @@ build:
 	go build -o ${BINARY} ${LDFLAGS}
 
 linux:
-	GOOS=linux GOARCH=386 go build ${LDFLAGS} -o ./target/linux_386/${BINARY}
-	GOOS=linux GOARCH=amd64 go build ${LDFLAGS} -o ./target/linux_amd64/${BINARY}
+	GOOS=linux GOARCH=386 go build ${LDFLAGS} -o ./target/linux_386/${BINARY}-linux-386
+	GOOS=linux GOARCH=amd64 go build ${LDFLAGS} -o ./target/linux_amd64/${BINARY}-linux-amd64
 
 darwin:
-	GOOS=darwin GOARCH=386 go build ${LDFLAGS} -o ./target/darwin_386/${BINARY}
-	GOOS=darwin GOARCH=amd64 go build ${LDFLAGS} -o ./target/darwin_amd64/${BINARY}
+	GOOS=darwin GOARCH=386 go build ${LDFLAGS} -o ./target/darwin_386/${BINARY}-osx-386
+	GOOS=darwin GOARCH=amd64 go build ${LDFLAGS} -o ./target/darwin_amd64/${BINARY}-osx-amd64
 
 windows:
-	GOOS=windows GOARCH=386 go build ${LDFLAGS} -o ./target/windows_386/${BINARY}.exe
-	GOOS=windows GOARCH=amd64 go build ${LDFLAGS} -o ./target/windows_amd64/${BINARY}.exe
+	GOOS=windows GOARCH=386 go build ${LDFLAGS} -o ./target/windows_386/${BINARY}-win-386.exe
+	GOOS=windows GOARCH=amd64 go build ${LDFLAGS} -o ./target/windows_amd64/${BINARY}-win-amd64.exe
 
 
 .PHONY: build
